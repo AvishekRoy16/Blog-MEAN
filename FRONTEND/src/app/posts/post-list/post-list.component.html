@@ -1,0 +1,130 @@
+
+<br><div class="html11 body11"></div>
+
+<div  *ngIf = "!userIsAuthenticated" style="height: 500px; background-color:#FFC017 ;">
+
+  <h1 style="font-family: Georgia; font-size: 80px; margin-left: 120px;"><b><br>Keep Writing,</b></h1>
+  <h1 style="font-family: Georgia; font-size: 80px; margin-left: 180px;"><b>Keep Reading.</b></h1>
+  <h2 style="font-family: Georgia; font-size: 36px; margin-left: 120px; margin-top: 40px;">Discover stories, thinking, and expertise<br> from writers on any topic.</h2>
+  <!-- <h4 style="margin-left: 560px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Welcome to the World Of Blog</h4> -->
+<!-- Designed with Figma -->
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top: -365px">
+  <g id="study">
+  <rect width="100" height="100"/>
+  <g id="smoke">
+  <path id="smoke-2" d="M9 21L9.55279 19.8944C9.83431 19.3314 9.83431 18.6686 9.55279 18.1056L9 17L8.44721 15.8944C8.16569 15.3314 8.16569 14.6686 8.44721 14.1056L9 13" stroke="#797270"/>
+  <path id="smoke-1" d="M6.5 22L7.05279 20.8944C7.33431 20.3314 7.33431 19.6686 7.05279 19.1056L6.5 18L5.94721 16.8944C5.66569 16.3314 5.66569 15.6686 5.94721 15.1056L6.5 14" stroke="#797270"/>
+  </g>
+  <g id="laptop">
+  <rect id="laptop-base" x="17" y="28" width="20" height="3" fill="#F3F3F3" stroke="#453F3C" stroke-width="2"/>
+  <rect id="laptop-screen" x="18" y="17" width="18" height="11" fill="#5A524E" stroke="#453F3C" stroke-width="2"/>
+  <rect id="line-1" x="20" y="19" width="14" height="1" fill="#F78764"/>
+  <rect id="line-2" x="20" y="21" width="14" height="1" fill="#F9AB82"/>
+  <rect id="line-3" x="20" y="23" width="14" height="1" fill="#F78764"/>
+  <rect id="line-4" x="20" y="25" width="14" height="1" fill="#F9AB82"/>
+  </g>
+  <g id="cup">
+  <rect id="Rectangle 978" x="5" y="24" width="5" height="7" fill="#CCC4C4" stroke="#453F3C" stroke-width="2"/>
+  <path id="Ellipse 416" d="M11 28C12.1046 28 13 27.1046 13 26C13 24.8954 12.1046 24 11 24" stroke="#453F3C" stroke-width="2"/>
+  <rect id="Rectangle 996" x="6" y="25" width="3" height="1" fill="#D6D2D1"/>
+  </g>
+  <g id="books">
+  <rect id="Rectangle 984" x="58" y="27" width="4" height="14" transform="rotate(90 58 27)" fill="#B16B4F" stroke="#453F3C" stroke-width="2"/>
+  <rect id="Rectangle 985" x="56" y="23" width="4" height="14" transform="rotate(90 56 23)" fill="#797270" stroke="#453F3C" stroke-width="2"/>
+  <rect id="Rectangle 986" x="60" y="19" width="4" height="14" transform="rotate(90 60 19)" fill="#F78764" stroke="#453F3C" stroke-width="2"/>
+  <rect id="Rectangle 993" x="47" y="20" width="12" height="1" fill="#F9AB82"/>
+  <rect id="Rectangle 994" x="43" y="24" width="12" height="1" fill="#54504E"/>
+  <rect id="Rectangle 995" x="45" y="28" width="12" height="1" fill="#804D39"/>
+  </g>
+  <g id="desk">
+  <rect id="Rectangle 973" x="4" y="31" width="56" height="5" fill="#797270" stroke="#453F3C" stroke-width="2"/>
+  <rect id="Rectangle 987" x="10" y="36" width="30" height="6" fill="#797270" stroke="#453F3C" stroke-width="2"/>
+  <rect id="Rectangle 975" x="6" y="36" width="4" height="24" fill="#797270" stroke="#453F3C" stroke-width="2"/>
+  <rect id="Rectangle 974" x="40" y="36" width="18" height="24" fill="#797270" stroke="#453F3C" stroke-width="2"/>
+  <line id="Line 129" x1="40" y1="48" x2="58" y2="48" stroke="#453F3C" stroke-width="2"/>
+  <line id="Line 130" x1="22" y1="39" x2="28" y2="39" stroke="#453F3C" stroke-width="2"/>
+  <line id="Line 142" x1="46" y1="42" x2="52" y2="42" stroke="#453F3C" stroke-width="2"/>
+  <line id="Line 131" x1="46" y1="54" x2="52" y2="54" stroke="#453F3C" stroke-width="2"/>
+  <rect id="Rectangle 988" x="11" y="37" width="28" height="1" fill="#54504E"/>
+  <rect id="Rectangle 992" x="5" y="32" width="54" height="1" fill="#9E9492"/>
+  <rect id="Rectangle 989" x="7" y="37" width="2" height="1" fill="#54504E"/>
+  <rect id="Rectangle 990" x="41" y="37" width="16" height="1" fill="#54504E"/>
+  <rect id="Rectangle 991" x="41" y="49" width="16" height="1" fill="#54504E"/>
+  <line id="Line 143" y1="60" x2="64" y2="60" stroke="#453F3C" stroke-width="2"/>
+  </g>
+  </g>
+  </svg>
+  
+  
+</div>
+
+<div class="site-section ">
+  <div class="container">
+    <div class="row">
+      <div *ngIf="isloading" style="text-align: center;" class="loading-text">
+        <app-spinner></app-spinner>
+     </div>
+      <div class="col-lg-8" >
+        
+        <div class="blog-card" *ngFor="let post of posts;let i=index" data-aos="fade-up" >
+          
+          <div class="meta" >
+            <div class="photo" [style.backgroundImage]="'url('+ post.imagePath +') ' "></div>
+            <ul class="details">
+              <li class="author" ><a [routerLink]="[post.id]"> {{ post.title }}</a></li>
+              
+              <li class="date">{{post.postDate | date:'short'}}</li>
+              
+            </ul>
+
+          </div>
+          <div class="description">
+            <h1><a [routerLink]="[post.id]"> {{ post.title }}</a></h1>
+            <p>{{post.content |slice:0: 150 }}....
+                  
+            <h2 class="read-more" *ngFor="let  user of postbyUser">
+              <p *ngIf="user.creator === post.creator">
+                <a [routerLink]="['public', user.username]">by {{user.username}}</a></p>
+  
+            </h2>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+  
+      
+  
+      <div class="col-lg-4" >
+        <h2 style="margin-left: 60px;">New Authors</h2>
+          <div class="flip-card" *ngFor="let usr of user.reverse()  | slice:0:4;" >
+            <div class="flip-card-container" style="--hue: 220" >
+          <div class="flip-card" >
+        
+            <div class="card-front" >
+              <figure>
+                <div class="img-bg"></div>
+                <img src= {{usr.imagePath}} alt="Brohm Lake">
+                <figcaption>{{usr.username}}</figcaption>
+              </figure>
+            </div>
+        
+            <div class="card-back">
+              <figure>
+                <div class="img-bg"></div>
+                <img src="data:image/jpeg;base64,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" alt="Brohm Lake">
+              </figure>
+        
+              <a [routerLink]="['public', usr.username]"><button>{{usr.bio |slice:0: 70}}</button></a>
+        
+            </div>
+        
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+  </div>
